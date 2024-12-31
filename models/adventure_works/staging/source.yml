@@ -1,0 +1,28 @@
+version: 2
+
+sources:
+  - name: adventureworks
+    description: Data originating from the sandbox in Snowflake.
+    database: DB_ADVENTUREWORKS
+    schema: RAW_SCHEMA
+    tables:
+      - name: employee
+        description: "This table contains detailed information about employees, including job titles, departments, and hire dates."
+
+      - name: person
+        description: "This table contains information about individuals, including names, contact details, and other personal attributes."
+
+      - name: customer
+        description: "This table contains detailed information about customers, including demographics and purchasing behavior."
+
+      - name: salesterritory
+        description: "This table contains information about sales territories, including regions, sales goals, and associated costs."
+
+      - name: salesorderdetail
+        description: "This table contains detailed line-item information for sales orders, including quantities, unit prices, and discounts."
+
+      - name: salesorderheader
+        description: "This table contains summary information for sales orders, including order dates, total amounts, and customer details."
+
+      - name: product
+        description: "This table contains detailed information about products, including specifications, pricing, and manufacturing details."

@@ -1,0 +1,35 @@
+version: 2
+
+models:
+  - name: stg_aw_sales_order_detail
+    description: "This model contains sales order detail data from AdventureWorks."
+    columns:
+      - name: sales_order_id
+        description: "Unique identifier for the sales order."
+        
+      - name: sales_order_detail_id
+        description: "Unique identifier for the sales order detail."
+        
+      - name: carrier_tracking_number
+        description: "Tracking number for the carrier used in the shipment."
+        
+      - name: order_qty
+        description: "Quantity of the product ordered."
+        
+      - name: product_id
+        description: "Unique identifier for the product."
+        
+      - name: special_offer_id
+        description: "Unique identifier for the special offer applied."
+        
+      - name: unit_price
+        description: "Price per unit of the product."
+        
+      - name: unit_price_discount
+        description: "Discount applied to the unit price of the product."
+        
+      - name: row_guid
+        description: "Globally Unique Identifier for the sales order detail."
+        
+      - name: modified_date
+        description: "Date of last modification to the sales order detail record."
