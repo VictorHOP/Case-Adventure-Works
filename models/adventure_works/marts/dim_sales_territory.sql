@@ -16,7 +16,12 @@ with
     
     , dim_sales_territory as (
         select
-            territory_id
+            {{
+                dbt_utils.generate_surrogate_key([ 
+                    'territory_id'
+                ])
+            }} as territory_sk
+            , territory_id
             , territory_name
             , country_region_code
             , territory_group

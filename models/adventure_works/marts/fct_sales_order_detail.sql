@@ -1,5 +1,19 @@
 with
-    sales_order_detail_data as (
+    dim_product as (
+        select
+            product_id
+            , product_sk
+        from {{ ref('dim_product') }}
+    )
+
+    , fct_sales_order_header as (
+        select
+            sales_order_id
+            , sales_order_sk
+        from {{ ref('fct_sales_order_header') }}
+    )
+
+    , sales_order_detail_data as (
         select
             sales_order_id
             , sales_order_detail_id
@@ -13,12 +27,19 @@ with
             , modified_date
         from {{ ref('stg_aw_sales_order_detail') }}
     )
-    
+
     , fct_sales_order_detail as (
         select
-            sales_order_id
+            {{
+                dbt_utils.generate_surrogate_key([ 
+                    'sales_order_detail_id'
+                ])
+            }} as sales_order_detail_sk
+            , fct_sales_order_header.sales_order_sk as sales_order_fk
+            , dim_product.product_sk as product_fk
+            , dim_product.product_id
+            , fct_sales_order_header.sales_order_id
             , sales_order_detail_id
-            , product_id
             , special_offer_id
             , carrier_tracking_number
             , order_qty
@@ -27,6 +48,10 @@ with
             , row_guid
             , modified_date
         from sales_order_detail_data
+        left join dim_product
+            on dim_product.product_id = sales_order_detail_data.product_id
+        left join fct_sales_order_header
+            on fct_sales_order_header.sales_order_id = sales_order_detail_data.sales_order_id
     )
 
 select *

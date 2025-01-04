@@ -1,5 +1,12 @@
 with
-    employee_data as (
+    dim_person as (
+        select
+            business_entity_id
+            , person_sk
+        from {{ ref('dim_person') }}
+    )
+
+    , employee_data as (
         select
             business_entity_id
             , national_id
@@ -21,7 +28,13 @@ with
 
     , dim_employee as (
         select
-            business_entity_id
+            {{
+                dbt_utils.generate_surrogate_key([ 
+                    'dim_person.business_entity_id'
+                ])
+            }} as employee_sk
+            , dim_person.person_sk as person_fk
+            , dim_person.business_entity_id
             , national_id
             , login_id
             , job_title
@@ -37,6 +50,8 @@ with
             , organization_node
             , row_guid
         from employee_data
+        left join dim_person
+            on dim_person.business_entity_id = employee_data.business_entity_id
     )
 
 select *

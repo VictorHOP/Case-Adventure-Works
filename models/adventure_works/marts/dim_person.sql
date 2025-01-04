@@ -14,7 +14,12 @@ with
 
     , dim_person as (
         select
-            business_entity_id
+            {{
+                dbt_utils.generate_surrogate_key([ 
+                    'business_entity_id'
+                ])
+            }} as person_sk
+            , business_entity_id
             , person_type
             , name_style
             , title
