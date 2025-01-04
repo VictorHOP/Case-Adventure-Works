@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: fct_sales_reason
+    description: "Fact table linking sales orders with their corresponding sales reasons."
+    columns:
+      - name: sales_order_id
+        description: "Unique identifier for the sales order."
+        tests:
+          - not_null
+
+      - name: sales_reason_id
+        description: "Unique identifier for the sales reason associated with the sales order."
+        tests:
+          - not_null
+
+      - name: modified_date
+        description: "Date when the record was last modified."
+

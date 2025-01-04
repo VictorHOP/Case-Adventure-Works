@@ -26,3 +26,9 @@ sources:
 
       - name: product
         description: "This table contains detailed information about products, including specifications, pricing, and manufacturing details."
+
+      - name: salesreason
+        description: "This table contains detailed information about products, including specifications, pricing, and manufacturing details."
+
+      - name: salesorderheadersalesreason
+        description: "This table contains detailed information about products, including specifications, pricing, and manufacturing details."

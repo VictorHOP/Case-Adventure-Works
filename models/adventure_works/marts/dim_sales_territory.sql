@@ -1,0 +1,33 @@
+with
+    sales_territory_data as (
+        select
+            territory_id
+            , territory_name
+            , country_region_code
+            , territory_group
+            , sales_ytd
+            , sales_last_year
+            , cost_ytd
+            , cost_last_year
+            , row_guid
+            , modified_date
+        from {{ ref('stg_aw_sales_territory') }}
+    )
+    
+    , dim_sales_territory as (
+        select
+            territory_id
+            , territory_name
+            , country_region_code
+            , territory_group
+            , sales_ytd
+            , sales_last_year
+            , cost_ytd
+            , cost_last_year
+            , row_guid
+            , modified_date
+        from sales_territory_data
+    )
+
+select *
+from dim_sales_territory

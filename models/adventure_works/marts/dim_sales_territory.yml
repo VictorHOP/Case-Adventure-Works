@@ -1,0 +1,38 @@
+version: 2
+
+models:
+  - name: dim_sales_territory
+    description: "Dimension table containing detailed information about sales territories."
+    columns:
+      - name: territory_id
+        description: "Unique identifier for the sales territory."
+        tests:
+          - unique
+          - not_null
+
+      - name: territory_name
+        description: "Name of the sales territory."
+
+      - name: country_region_code
+        description: "Code representing the country or region of the territory."
+
+      - name: territory_group
+        description: "Group or category of the sales territory."
+
+      - name: sales_ytd
+        description: "Year-to-date sales for the territory."
+
+      - name: sales_last_year
+        description: "Sales for the territory in the last year."
+
+      - name: cost_ytd
+        description: "Year-to-date costs for the territory."
+
+      - name: cost_last_year
+        description: "Costs for the territory in the last year."
+
+      - name: row_guid
+        description: "Unique row identifier."
+
+      - name: modified_date
+        description: "Date when the record was last modified."

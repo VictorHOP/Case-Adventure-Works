@@ -1,0 +1,41 @@
+version: 2
+
+models:
+  - name: fct_sales_order_detail
+    description: "Fact table containing details about individual sales order lines, including products and discounts."
+    columns:
+      - name: sales_order_id
+        description: "Unique identifier for the sales order."
+        tests:
+          - not_null
+
+      - name: sales_order_detail_id
+        description: "Unique identifier for the sales order detail line."
+        tests:
+          - unique
+          - not_null
+
+      - name: product_id
+        description: "Identifier for the product in the sales order line."
+
+      - name: special_offer_id
+        description: "Identifier for the special offer applied to the sales order line."
+
+      - name: carrier_tracking_number
+        description: "Tracking number for the carrier shipping the order."
+
+      - name: order_qty
+        description: "Quantity of products ordered."
+
+      - name: unit_price
+        description: "Unit price of the product in the sales order line."
+
+      - name: unit_price_discount
+        description: "Discount applied to the unit price."
+
+      - name: row_guid
+        description: "Unique row identifier."
+
+      - name: modified_date
+        description: "Date when the record was last modified."
+

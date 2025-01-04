@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: dim_customer
+    description: "Dimension table containing detailed information about customers."
+    columns:
+      - name: customer_id
+        description: "Unique identifier for the customer."
+        tests:
+          - unique
+          - not_null
+
+      - name: person_id
+        description: "Identifier linking the customer to a person."
+
+      - name: store_id
+        description: "Identifier linking the customer to a store."
+
+      - name: territory_id
+        description: "Identifier linking the customer to a sales territory."
+
+      - name: row_guid
+        description: "Unique row identifier."
+
+      - name: modified_date
+        description: "Date when the record was last modified."

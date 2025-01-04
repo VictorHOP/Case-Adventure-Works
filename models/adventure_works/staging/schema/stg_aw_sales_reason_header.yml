@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: stg_aw_sales_reason_header
+    description: "This model contains the relationship between sales orders and sales reasons from AdventureWorks."
+    columns:
+      - name: sales_order_id
+        description: "Unique identifier for the sales order."
+
+      - name: sales_reason_id
+        description: "Unique identifier for the sales reason associated with the sales order."
+
+      - name: modified_date
+        description: "Date of last modification to the record linking the sales order and sales reason."
