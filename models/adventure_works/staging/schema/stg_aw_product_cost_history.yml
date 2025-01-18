@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: stg_aw_product_cost_history
+    description: "Staging table for product cost history, containing product costs over time."
+    columns:
+      - name: product_id
+        description: "Unique identifier for the product."
+
+      - name: start_date
+        description: "Start date when the cost became effective."
+
+      - name: end_date
+        description: "End date when the cost was no longer effective. Null if still active."
+
+      - name: standard_cost
+        description: "Standard cost of the product in string format."
+
+      - name: modified_date
+        description: "Date when the record was last modified."

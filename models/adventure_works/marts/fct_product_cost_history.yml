@@ -1,0 +1,33 @@
+version: 2
+
+models:
+  - name: fct_product_cost_history
+    description: "Fact table that tracks the historical cost changes of products over time."
+    columns:
+      - name: product_cost_history_sk
+        description: "Surrogate key uniquely identifying each product cost history record."
+        tests:
+          - unique
+          - not_null
+
+      - name: product_id
+        description: "Unique identifier for the product."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_product')
+              field: product_id
+
+      - name: start_date
+        description: "Start date when the product cost became effective."
+        tests:
+          - not_null
+
+      - name: end_date
+        description: "End date when the product cost was no longer effective. Null if still active."
+
+      - name: standard_cost
+        description: "The standard cost of the product at a specific time."
+
+      - name: modified_date
+        description: "Date when the record was last modified."

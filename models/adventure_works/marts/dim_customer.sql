@@ -3,6 +3,7 @@ with
         select
             business_entity_id
             , person_sk
+            , full_name
         from {{ ref('dim_person') }}
     )
 
@@ -37,6 +38,7 @@ with
             , person_id
             , store_id
             , dim_sales_territory.territory_id
+            , dim_person.full_name
             , row_guid
             , modified_date
         from customers

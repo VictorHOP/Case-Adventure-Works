@@ -1,0 +1,41 @@
+version: 2
+
+models:
+  - name: dim_address
+    description: "This model creates the address dimension, combining data from address and state province sources."
+    columns:
+      - name: address_sk
+        description: "Surrogate key for the address dimension."
+
+      - name: address_id
+        description: "Unique identifier for the address from the source system."
+
+      - name: address_line_1
+        description: "First line of the address."
+
+      - name: address_line_2
+        description: "Second line of the address (optional)."
+
+      - name: city
+        description: "City where the address is located."
+
+      - name: state_province_id
+        description: "Unique identifier for the state or province."
+
+      - name: postal_code
+        description: "Postal code or ZIP code of the address."
+
+      - name: state_province_code
+        description: "Code representing the state or province."
+
+      - name: country_region_code
+        description: "Country or region code associated with the state or province."
+
+      - name: state_province_name
+        description: "Name of the state or province."
+
+      - name: territory_id
+        description: "Sales territory associated with the state or province."
+
+      - name: is_only_state_province_flag
+        description: "Indicates if this is the only state or province for the country/region."

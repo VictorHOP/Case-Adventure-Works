@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: stg_aw_state_province
+    description: "This model contains state and province data from AdventureWorks."
+    columns:
+      - name: state_province_id
+        description: "Unique identifier for the state or province."
+        
+      - name: state_province_code
+        description: "Code for the state or province."
+        
+      - name: country_region_code
+        description: "Country/Region code associated with the state or province."
+        
+      - name: state_province_name
+        description: "Name of the state or province."
+        
+      - name: territory_id
+        description: "Sales territory identifier associated with the state or province."
+        
+      - name: is_only_state_province_flag
+        description: "Indicates if this is the only state or province for the country/region."
+        
+      - name: row_guid
+        description: "Globally Unique Identifier for the state or province."
+        
+      - name: modified_date
+        description: "Date of last modification to the state or province record."

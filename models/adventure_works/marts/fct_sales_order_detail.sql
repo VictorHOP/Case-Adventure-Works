@@ -13,6 +13,14 @@ with
         from {{ ref('fct_sales_order_header') }}
     )
 
+    , current_product_cost as (
+        select
+            product_id
+            , standard_cost
+        from {{ ref('fct_product_cost_history') }}
+        where end_date is null
+    )
+
     , sales_order_detail_data as (
         select
             sales_order_id
@@ -45,6 +53,9 @@ with
             , order_qty
             , unit_price
             , unit_price_discount
+            , order_qty * (unit_price * (1-unit_price_discount)) as total_price
+            , total_price / nullif(order_qty, 0) as ticket_medio
+            , current_product_cost.standard_cost
             , row_guid
             , modified_date
         from sales_order_detail_data
@@ -52,6 +63,8 @@ with
             on dim_product.product_id = sales_order_detail_data.product_id
         left join fct_sales_order_header
             on fct_sales_order_header.sales_order_id = sales_order_detail_data.sales_order_id
+        left join current_product_cost
+            on current_product_cost.product_id = sales_order_detail_data.product_id
     )
 
 select *

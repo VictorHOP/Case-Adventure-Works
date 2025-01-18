@@ -1,0 +1,32 @@
+version: 2
+
+models:
+  - name: stg_aw_address
+    description: "This model contains address data from AdventureWorks."
+    columns:
+      - name: address_id
+        description: "Unique identifier for the address."
+        
+      - name: address_line_1
+        description: "First line of the address."
+        
+      - name: address_line_2
+        description: "Second line of the address (optional)."
+        
+      - name: city
+        description: "City associated with the address."
+        
+      - name: state_province_id
+        description: "Identifier for the state or province of the address."
+        
+      - name: postal_code
+        description: "Postal code or ZIP code for the address."
+        
+      - name: spatial_location
+        description: "Geographic information for the address."
+        
+      - name: row_guid
+        description: "Globally Unique Identifier for the address."
+        
+      - name: modified_date
+        description: "Date of last modification to the address record."

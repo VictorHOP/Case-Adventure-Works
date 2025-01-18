@@ -3,6 +3,7 @@ with
         select
             business_entity_id
             , person_sk
+            , full_name
         from {{ ref('dim_person') }}
     )
 
@@ -35,6 +36,7 @@ with
             }} as employee_sk
             , dim_person.person_sk as person_fk
             , dim_person.business_entity_id
+            , dim_person.full_name
             , national_id
             , login_id
             , job_title

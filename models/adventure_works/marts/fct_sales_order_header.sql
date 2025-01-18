@@ -44,7 +44,6 @@ with
             , tax_amount
             , freight
             , total_due
-            , comment
             , row_guid
             , modified_date
         from {{ ref('stg_aw_sales_order_header') }}
@@ -57,7 +56,7 @@ with
                     'sales_order_id'
                 ])
             }} as sales_order_sk
-            , dim_person.person_sk as salesperson_fk
+            , dim_person.person_sk as employee_fk
             , dim_customer.customer_sk as customer_fk
             , dim_sales_territory.territory_sk as territory_fk
             , sales_order_id
@@ -69,7 +68,11 @@ with
             , due_date
             , ship_date
             , status
-            , online_order_flag
+            , case
+                when online_order_flag = '1' then 'Internet'
+                when online_order_flag = '0' then 'Revendedor'
+                else null
+            end as online_order_flag
             , purchase_order_number
             , account_number
             , bill_to_address_id
@@ -82,7 +85,6 @@ with
             , tax_amount
             , freight
             , total_due
-            , comment
             , row_guid
             , modified_date
         from sales_order_header_data
