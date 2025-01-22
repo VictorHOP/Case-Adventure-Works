@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: stg_aw_product_inventory
+    description: "This staging model contains inventory data for products from the AdventureWorks database."
+    columns:
+      - name: product_id
+        description: "Unique identifier for the product. Relates to the Product table."
+
+      - name: location_id
+        description: "Unique identifier for the location where the product is stored. Relates to the Location table."
+
+      - name: shelf
+        description: "Shelf where the product is stored within the location."
+
+      - name: bin
+        description: "Bin or specific position on the shelf where the product is stored."
+
+      - name: store_quantity
+        description: "The quantity of the product available in the specified location."

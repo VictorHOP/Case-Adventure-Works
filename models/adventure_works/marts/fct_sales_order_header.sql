@@ -6,13 +6,6 @@ with
         from {{ ref('dim_person') }}
     )
 
-    , dim_customer as (
-        select
-            customer_id
-            , customer_sk
-        from {{ ref('dim_customer') }}
-    )
-
     , dim_sales_territory as (
         select
             territory_id
@@ -57,16 +50,17 @@ with
                 ])
             }} as sales_order_sk
             , dim_person.person_sk as employee_fk
-            , dim_customer.customer_sk as customer_fk
             , dim_sales_territory.territory_sk as territory_fk
             , sales_order_id
             , salesperson_id
-            , dim_customer.customer_id
+            , customer_id
             , dim_sales_territory.territory_id
             , revision_number
             , order_date
             , due_date
             , ship_date
+            , datediff(day, order_date, ship_date) as days_ship
+            , datediff(day, order_date, due_date) as days_delivery
             , status
             , case
                 when online_order_flag = '1' then 'Internet'
@@ -90,8 +84,6 @@ with
         from sales_order_header_data
         left join dim_person
             on dim_person.business_entity_id = sales_order_header_data.salesperson_id
-        left join dim_customer
-            on dim_customer.customer_id = sales_order_header_data.customer_id
         left join dim_sales_territory
             on dim_sales_territory.territory_id = sales_order_header_data.territory_id
     )

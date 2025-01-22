@@ -41,3 +41,12 @@ sources:
 
       - name: address
         description: "This table contains detailed address information, including street, city, postal code, and geographic details."
+
+      - name: productsubcategory
+        description: "This table contains information about product subcategories, including their names and associated product categories."
+
+      - name: productcategory
+        description: "This table contains information about product categories, which group products into broader classifications."
+
+      - name: productinventory
+        description: "This table contains inventory data for products, including their quantity, storage location, and bin details."
