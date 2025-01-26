@@ -1,25 +1,41 @@
-# Indicium Academy
+# Projeto de Modelagem de Dados com DBT
 
-Repositório para ser utilizado no desafio para a obtenção da certificação de Analytics Engineer by Indicium. Faça o fork deste repositório e o utilize durante o desafio para fazer a insgestão das tabelas do SAP do Adventure Works.
+Este projeto DBT foi desenvolvido para modelar e transformar os dados da Adventure Works. O objetivo principal é criar camadas de dados organizadas e otimizadas para análises no BI, permitindo insights de vendas, marketing e operações.
 
-## Instruções
+O projeto utiliza as melhores práticas de engenharia de dados, com foco em desempenho e manutenção.
 
-Todas as tabelas do banco fonte do SAP da Adventure Works serão carregadas como seeds pelo dbt. Os arquivos .csv com os dados já estão na pasta de seeds.
+## Objetivos
+- Organizar dados brutos em modelos fáceis de usar e consistentes para análises.
+- Criar camadas de dados (staging e mart) para suportar dashboards de BI.
+- Automatizar transformações para garantir escalabilidade e reprodutibilidade.
 
-Para fazer o carregamento de todas as tabelas usem o comando:
-- `dbt seed`
+### Principais Arquivos
+- `dbt_project.yml`: Configuração principal do DBT.
+- `models/`: Diretório com os modelos SQL organizados por camadas.
+- `seeds/`: Dados estáticos usados no projeto.
 
-Para carregar uma tabela especifíca utilizem o comando
-- `dbt seed -s nome_do_csv`
+## Requisitos
+Certifique-se de ter as seguintes ferramentas instaladas:
+- DBT CLI (`pip install dbt-core` ou equivalente).
+- Conexão configurada para o banco de dados Snowflake.
+- Acesso ao ambiente de execução (local ou remoto).
 
-### Problemas comuns
+## Como Executar
 
-Em caso a linha de comando do dbt fique com o status de estar sempre carregando, ou, o job do comando `dbt seed` fique rodando indefinitivamente mesmo após as 64 tabelas forem carregadas você precisará reiniciar o terminal. Para isso, clique nos três pontos no canto inferior direito ou no lado direito da linha de comando e escolha a opção `Restart IDE`.
+1. Configure o arquivo `profiles.yml` com as credenciais do banco de dados.
+2. Execute os seguintes comandos:
 
+- Para compilar os modelos:
+  ```bash
+  dbt compile
+- Para rodar os modelos
+  ```bash
+  dbt run
+- Para rodar os testes
+  ```bash
+  dbt test
 
-## Recursos:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [dbt community](http://community.getbdt.com/) to learn from other analytics engineers
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+## Contato
+Criado por Victor Hugo - victorhugo.op@outlook.com
+
+Para dúvidas ou sugestões, entre em contato!
