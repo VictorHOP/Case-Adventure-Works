@@ -21,9 +21,6 @@ with
             , vacation_hours
             , sick_leave_hours
             , current_flag
-            , modified_date
-            , organization_node
-            , row_guid
         from {{ ref('stg_aw_employee') }}
     )
 
@@ -48,9 +45,6 @@ with
             , vacation_hours
             , sick_leave_hours
             , current_flag
-            , modified_date
-            , organization_node
-            , row_guid
         from employee_data
         left join dim_person
             on dim_person.business_entity_id = employee_data.business_entity_id

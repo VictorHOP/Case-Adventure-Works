@@ -42,12 +42,3 @@ models:
 
       - name: current_flag
         description: "Indicates if the employee is currently active (true/false)."
-
-      - name: modified_date
-        description: "Date when the record was last modified."
-
-      - name: organization_node
-        description: "Node in the organization hierarchy for the employee."
-
-      - name: row_guid
-        description: "Unique row identifier."

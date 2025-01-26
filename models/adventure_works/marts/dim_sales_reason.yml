@@ -15,6 +15,3 @@ models:
 
       - name: reason_type
         description: "Type or category of the sales reason."
-
-      - name: modified_date
-        description: "Date when the record was last modified."

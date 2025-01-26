@@ -17,7 +17,6 @@ with
         select
             sales_order_id
             , sales_reason_id
-            , modified_date
         from {{ ref('stg_aw_sales_reason_header') }}
     )
 
@@ -33,7 +32,6 @@ with
             , dim_sales_reason.sales_reason_sk as sales_reason_fk
             , fct_sales_order_header.sales_order_id
             , dim_sales_reason.sales_reason_id
-            , sales_reason_header_data.modified_date
         from sales_reason_header_data
         left join fct_sales_order_header
             on fct_sales_order_header.sales_order_id = sales_reason_header_data.sales_order_id

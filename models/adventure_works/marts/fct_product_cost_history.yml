@@ -28,6 +28,3 @@ models:
 
       - name: standard_cost
         description: "The standard cost of the product at a specific time."
-
-      - name: modified_date
-        description: "Date when the record was last modified."

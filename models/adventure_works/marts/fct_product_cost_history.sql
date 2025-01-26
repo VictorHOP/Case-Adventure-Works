@@ -4,8 +4,7 @@ with
             product_id
             , start_date
             , end_date
-            , cast(standard_cost as float) as standard_cost
-            , modified_date
+            , standard_cost
         from {{ ref('stg_aw_product_cost_history') }}
     )
 
@@ -21,7 +20,6 @@ with
             start_date,
             end_date,
             standard_cost,
-            modified_date
         from product_cost_history_data
     )
 

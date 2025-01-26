@@ -37,8 +37,6 @@ with
             , tax_amount
             , freight
             , total_due
-            , row_guid
-            , modified_date
         from {{ ref('stg_aw_sales_order_header') }}
     )
 
@@ -79,8 +77,6 @@ with
             , tax_amount
             , freight
             , total_due
-            , row_guid
-            , modified_date
         from sales_order_header_data
         left join dim_person
             on dim_person.business_entity_id = sales_order_header_data.salesperson_id

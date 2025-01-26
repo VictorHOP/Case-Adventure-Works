@@ -3,7 +3,7 @@ snowflake-db:
   outputs:
     dev:
       type: snowflake
-      account: biuptny-bb70598
+      account: leglcqf-ay97008
       user: VICTORHOP
       password: Vitor%1000
       database: DB_ADVENTUREWORKS

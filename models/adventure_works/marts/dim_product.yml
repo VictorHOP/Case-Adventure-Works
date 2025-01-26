@@ -75,10 +75,3 @@ models:
 
       - name: discontinued_date
         description: "Date when the product was officially discontinued."
-
-      - name: row_guid
-        description: "Unique identifier for the row."
-
-      - name: modified_date
-        description: "Date when the record was last modified."
-

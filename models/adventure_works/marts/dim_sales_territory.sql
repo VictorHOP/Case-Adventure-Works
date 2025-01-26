@@ -9,8 +9,6 @@ with
             , sales_last_year
             , cost_ytd
             , cost_last_year
-            , row_guid
-            , modified_date
         from {{ ref('stg_aw_sales_territory') }}
     )
     
@@ -29,8 +27,6 @@ with
             , sales_last_year
             , cost_ytd
             , cost_last_year
-            , row_guid
-            , modified_date
         from sales_territory_data
     )
 

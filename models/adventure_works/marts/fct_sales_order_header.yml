@@ -75,10 +75,3 @@ models:
 
       - name: comment
         description: "Comments or notes associated with the sales order."
-
-      - name: row_guid
-        description: "Unique row identifier."
-
-      - name: modified_date
-        description: "Date when the record was last modified."
-

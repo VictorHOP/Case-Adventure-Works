@@ -31,8 +31,6 @@ with
             , order_qty
             , unit_price
             , unit_price_discount
-            , row_guid
-            , modified_date
         from {{ ref('stg_aw_sales_order_detail') }}
     )
 
@@ -56,8 +54,6 @@ with
             , order_qty * (unit_price * (1-unit_price_discount)) as total_price
             , total_price / nullif(order_qty, 0) as ticket_medio
             , current_product_cost.standard_cost
-            , row_guid
-            , modified_date
         from sales_order_detail_data
         left join dim_product
             on dim_product.product_id = sales_order_detail_data.product_id

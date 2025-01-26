@@ -30,9 +30,3 @@ models:
 
       - name: cost_last_year
         description: "Costs for the territory in the last year."
-
-      - name: row_guid
-        description: "Unique row identifier."
-
-      - name: modified_date
-        description: "Date when the record was last modified."

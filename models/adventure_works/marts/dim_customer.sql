@@ -29,8 +29,6 @@ with
             , person_id
             , store_id
             , territory_id
-            , row_guid
-            , modified_date
         from {{ ref('stg_aw_customer') }}
     )
 
@@ -60,8 +58,6 @@ with
                 when datediff(day, last_purchase_date.last_order_date, '2014-06-30') > 180 then 'Compra Antiga - mais de 6 meses'
                 else 'Sem Compras'
             end as last_purchase
-            , row_guid
-            , modified_date
         from customers
         left join dim_person
             on dim_person.business_entity_id = customers.person_id

@@ -4,7 +4,6 @@ with
             sales_reason_id
             , reason_name
             , reason_type
-            , modified_date
         from {{ ref('stg_aw_sales_reason') }}
     )
     
@@ -18,7 +17,6 @@ with
             , sales_reason_id
             , reason_name
             , reason_type
-            , modified_date
         from sales_reason_data
     )
 

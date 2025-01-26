@@ -24,8 +24,6 @@ with
             , sell_start_date
             , sell_end_date
             , discontinued_date
-            , row_guid
-            , modified_date
         from {{ ref('stg_aw_product') }}
     )
 
@@ -82,8 +80,6 @@ with
             , sell_start_date
             , sell_end_date
             , discontinued_date
-            , row_guid
-            , modified_date
         from joins_product
     )
 

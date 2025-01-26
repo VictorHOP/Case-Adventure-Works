@@ -23,9 +23,3 @@ models:
 
       - name: email_promotion
         description: "Indicates if the person has opted in for email promotions."
-
-      - name: row_guid
-        description: "Unique row identifier."
-
-      - name: modified_date
-        description: "Date when the record was last modified."

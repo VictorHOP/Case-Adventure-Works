@@ -32,10 +32,3 @@ models:
 
       - name: unit_price_discount
         description: "Discount applied to the unit price."
-
-      - name: row_guid
-        description: "Unique row identifier."
-
-      - name: modified_date
-        description: "Date when the record was last modified."
-

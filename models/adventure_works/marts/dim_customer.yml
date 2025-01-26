@@ -18,9 +18,3 @@ models:
 
       - name: territory_id
         description: "Identifier linking the customer to a sales territory."
-
-      - name: row_guid
-        description: "Unique row identifier."
-
-      - name: modified_date
-        description: "Date when the record was last modified."

@@ -7,8 +7,6 @@ with
             , title
             , full_name
             , email_promotion
-            , row_guid
-            , modified_date
         from {{ ref('stg_aw_person') }}
     )
 
@@ -25,8 +23,6 @@ with
             , title
             , full_name
             , email_promotion
-            , row_guid
-            , modified_date
         from person_data
     )
 
