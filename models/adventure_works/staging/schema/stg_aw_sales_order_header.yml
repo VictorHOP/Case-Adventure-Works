@@ -1,0 +1,80 @@
+version: 2
+
+models:
+  - name: stg_aw_sales_order_header
+    description: "This model contains sales order header data from AdventureWorks."
+    columns:
+      - name: sales_order_id
+        description: "Unique identifier for the sales order."
+
+      - name: revision_number
+        description: "Revision number of the sales order."
+
+      - name: order_date
+        description: "Date when the order was placed."
+
+      - name: due_date
+        description: "Date by which the order is due."
+
+      - name: ship_date
+        description: "Date when the order was shipped."
+
+      - name: status
+        description: "Status of the sales order."
+
+      - name: online_order_flag
+        description: "Flag indicating if the order was placed online."
+
+      - name: purchase_order_number
+        description: "Purchase order number associated with the sales order."
+
+      - name: account_number
+        description: "Account number for the customer placing the order."
+
+      - name: customer_id
+        description: "Unique identifier for the customer."
+
+      - name: salesperson_id
+        description: "Unique identifier for the salesperson handling the order."
+
+      - name: territory_id
+        description: "Unique identifier for the sales territory."
+
+      - name: bill_to_address_id
+        description: "Unique identifier for the billing address."
+
+      - name: ship_to_address_id
+        description: "Unique identifier for the shipping address."
+
+      - name: ship_method_id
+        description: "Unique identifier for the shipping method."
+
+      - name: credit_card_id
+        description: "Unique identifier for the credit card used in the transaction."
+
+      - name: credit_card_approval_code
+        description: "Approval code for the credit card transaction."
+
+      - name: currency_rate_id
+        description: "Unique identifier for the currency rate applied to the order."
+
+      - name: subtotal
+        description: "Subtotal amount for the sales order."
+
+      - name: tax_amount
+        description: "Tax amount applied to the sales order."
+
+      - name: freight
+        description: "Freight cost for the sales order."
+
+      - name: total_due
+        description: "Total amount due for the sales order."
+
+      - name: comment
+        description: "Comments associated with the sales order."
+
+      - name: row_guid
+        description: "Globally unique identifier for the sales order."
+
+      - name: modified_date
+        description: "Date of last modification to the sales order record."

@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: stg_aw_customer
+    description: "This staging model prepares and cleanses data from the AdventureWorks customer table for further use in the data warehouse."
+    columns:
+      - name: customer_id
+        description: "Unique identifier for the customer."
+        tests:
+          - not_null
+          - unique
+
+      - name: person_id
+        description: "Identifier for the person associated with the customer."
+
+      - name: store_id
+        description: "Identifier for the store associated with the customer."
+
+      - name: territory_id
+        description: "Identifier for the territory associated with the customer."
+
+      - name: row_guid
+        description: "Globally unique identifier (GUID) for the customer record."
+
+      - name: modified_date
+        description: "The date when the customer record was last modified."

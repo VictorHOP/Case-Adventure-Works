@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: agg_product_inventory
+    description: "Aggregated inventory data that calculates the total store quantity for each product."
+    columns:
+      - name: product_id
+        description: "Unique identifier for the product. Relates to the Product table."
+
+      - name: total_store_quantity
+        description: "Total quantity of the product available across all locations in the inventory."

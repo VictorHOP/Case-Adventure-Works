@@ -1,0 +1,35 @@
+version: 2
+
+models:
+  - name: stg_aw_person
+    description: "This model contains person data from AdventureWorks."
+    columns:
+      - name: businessentity_id
+        description: "Unique identifier for the business entity."
+
+      - name: person_type
+        description: "Type of person (e.g., Individual, Organization)."
+
+      - name: name_style
+        description: "Name style preference."
+
+      - name: title
+        description: "Title or prefix (e.g., Mr., Mrs., Dr.)."
+
+      - name: full_name
+        description: "Full name of the person."
+
+      - name: email_promotion
+        description: "Preference for receiving email promotions."
+
+      - name: additional_contact_info
+        description: "Additional contact information."
+
+      - name: demographics
+        description: "Demographic information."
+
+      - name: row_guid
+        description: "Globally Unique Identifier for the person."
+
+      - name: modified_date
+        description: "Date of last modification to the person record."

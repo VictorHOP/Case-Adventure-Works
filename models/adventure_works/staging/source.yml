@@ -1,0 +1,52 @@
+version: 2
+
+sources:
+  - name: adventureworks
+    description: Data originating from the sandbox in Snowflake.
+    database: DB_ADVENTUREWORKS
+    schema: RAW_SCHEMA
+    tables:
+      - name: employee
+        description: "This table contains detailed information about employees, including job titles, departments, and hire dates."
+
+      - name: person
+        description: "This table contains information about individuals, including names, contact details, and other personal attributes."
+
+      - name: customer
+        description: "This table contains detailed information about customers, including demographics and purchasing behavior."
+
+      - name: salesterritory
+        description: "This table contains information about sales territories, including regions, sales goals, and associated costs."
+
+      - name: salesorderdetail
+        description: "This table contains detailed line-item information for sales orders, including quantities, unit prices, and discounts."
+
+      - name: salesorderheader
+        description: "This table contains summary information for sales orders, including order dates, total amounts, and customer details."
+
+      - name: product
+        description: "This table contains detailed information about products, including specifications, pricing, size, color, and manufacturing details."
+
+      - name: salesreason
+        description: "This table contains information about sales reasons, such as reasons for customer purchase behavior and their corresponding types."
+
+      - name: salesorderheadersalesreason
+        description: "This table establishes a relationship between sales orders and the reasons for the sales, providing insights into the reasons behind each order."
+
+      - name: productcosthistory
+        description: "This table contains the historical cost data of products, including start and end dates for cost changes and modification details."
+
+      - name: stateprovince
+        description: "This table contains information about states and provinces, including codes, names, territories, and associated countries/regions."
+
+      - name: address
+        description: "This table contains detailed address information, including street, city, postal code, and geographic details."
+
+      - name: productsubcategory
+        description: "This table contains information about product subcategories, including their names and associated product categories."
+
+      - name: productcategory
+        description: "This table contains information about product categories, which group products into broader classifications."
+
+      - name: productinventory
+        description: "This table contains inventory data for products, including their quantity, storage location, and bin details."

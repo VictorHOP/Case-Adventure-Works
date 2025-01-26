@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: stg_aw_sales_reason
+    description: "This model contains sales reasons data from AdventureWorks."
+    columns:
+      - name: sales_reason_id
+        description: "Unique identifier for the sales reason."
+
+      - name: name
+        description: "Name of the sales reason."
+
+      - name: reason_type
+        description: "Type or category of the sales reason."
+
+      - name: modified_date
+        description: "Date of last modification to the sales reason record."
