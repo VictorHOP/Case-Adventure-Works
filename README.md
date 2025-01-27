@@ -29,8 +29,10 @@ Certifique-se de ter as seguintes ferramentas instaladas:
   ```bash
   dbt compile
 - Para rodar os modelos
+  ```bash
   dbt run
 - Para rodar os testes
+  ```bash
   dbt test
 
 ## Contato
